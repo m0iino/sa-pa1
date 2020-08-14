@@ -1,23 +1,11 @@
 #importamos Client del zeep
 from zeep  import Client 
 #url de acceso al web service
-client = Client(wsdl="https://api.softwareavanzado.world/index.php?webserviceClient=administrator&webserviceVersion=1.0.0&option=contact&api=soap&wsdl") 
-#contador de clientes a ingresar
-c = 0 
-#bucle para crear cliente 
-for i in range(c): 
-        #van hacer 10 clientes
-        if c < 10: 
-                #llamamos al servicio y colocamos los parametros
-                print("esto trae",client.service.create("201114527_"+str(c))) 
-        #incremantamos el contador en 1
-        c +=1 
-#bucle para obtener cliente
-for c in client.service.readList(0,10,201114527):    
-        # imprimimos el nombre del cliente
-        print(c.name) 
+client = Client(wsdl="https://api.softwareavanzado.world/index.php?option=token&api=oauth2&grant_type=client_credentials&client_id=sa&client_secret=fb5089840031449f1a4bf2c91c2bd2261d5b2f122bd8754ffe23be17b107b8eb103b441de3771745") 
+print(client)
 
     
+
 
 
 
